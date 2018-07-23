@@ -1,7 +1,7 @@
 var path = require("path");
 
 module.exports = {
-    entry:["whatwg-fetch", "./js/form_builder.jsx"],
+    entry:["whatwg-fetch", "./js/app.jsx"],
     output: { filename: "./js/out.js"},
     mode: "development", watch: true,
     devtool: '#eval-source-map',

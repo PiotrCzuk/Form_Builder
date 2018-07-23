@@ -1,28 +1,12 @@
 import React from 'react';
 import ReactDom from 'react-dom';
+import AddInput from './components/add_input.jsx';
 
 
 
-class Question extends React.Component {
-    render() {
-        if (this.props.info == false) {
-            return null
-        }else {
-            return (
-                <div>
-                    <form>
-                        <label>Question:
-                        <input type='text'/>
-                        </label>
-                    </form>
-                </div>
-            )
-        }
-    }
-}
 
 
-class AddInput extends React.Component {
+class Form extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -41,7 +25,7 @@ class AddInput extends React.Component {
         return (
             <section>
                 <h1>Form Builder</h1>
-                <Question info={this.state.clicked}/>
+                <AddInput info={this.state.clicked}/>
                 <button onClick={this.handleClick}>Add Input</button>
             </section>
         )
@@ -52,7 +36,7 @@ class AddInput extends React.Component {
 class App extends React.Component {
     render () {
         return (
-            <AddInput/>
+            <Form/>
         )
     }
 }

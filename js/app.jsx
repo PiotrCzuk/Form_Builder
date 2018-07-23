@@ -10,6 +10,8 @@ class Form extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            value: [],
+            count: 0,
             clicked: false
         }
     }
@@ -17,15 +19,28 @@ class Form extends React.Component {
     handleClick = (e) => {
         e.preventDefault();
         this.setState({
-            clicked: true
-        })
-}
+            clicked: true,
+            count: this.state.count+1
+        });
+    };
+
+    displayForm(){
+        let forms = [];
+        for(let i = 0; i < this.state.count; i++){
+            forms.push(
+                <div key={i}>
+                    <AddInput value={this.state.value[i] || ''} />
+                </div>
+            )
+        }
+        return forms || null;
+    }
 
     render () {
         return (
             <section>
                 <h1>Form Builder</h1>
-                {this.state.clicked ? <AddInput /> : null}
+                {this.state.clicked ? this.displayForm() : null}
                 <button onClick={this.handleClick}>Add Input</button>
             </section>
         )

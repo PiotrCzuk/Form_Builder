@@ -30,6 +30,8 @@ class AddInput extends React.Component {
                                 <option value='Number'>Number</option>
                             </select>
                         </label>
+                        <button>Add SubInput</button>
+                        <button>Delete</button>
                     </form>
                 </div>
             )

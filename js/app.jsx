@@ -25,7 +25,7 @@ class Form extends React.Component {
         return (
             <section>
                 <h1>Form Builder</h1>
-                <AddInput info={this.state.clicked}/>
+                {this.state.clicked ? <AddInput /> : null}
                 <button onClick={this.handleClick}>Add Input</button>
             </section>
         )
